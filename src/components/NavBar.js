@@ -1,3 +1,4 @@
+import { CartWidget } from '../components/CartWidget'
 
 const NavBar = () => {
 
@@ -12,6 +13,8 @@ const NavBar = () => {
                 <li>enlace 3</li>
             </ul>    
         </nav>
+
+        <CartWidget/>
     </div>
     )
 }
