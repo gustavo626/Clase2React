@@ -2,6 +2,7 @@ import './style.css'
 import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 
       <NavBar/>
       <ItemListContainer greeting="hola profe"/>
+      <ItemDetailContainer/>
 
       <h2>{ titulo }</h2>
       <hr/>
