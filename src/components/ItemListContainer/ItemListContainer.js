@@ -8,12 +8,22 @@ export const  ItemListContainer = () => {
     const [loading, setLoading] = useState(false)
     const [productos, setProductos] = useState([])
 
+
+    const { catId } = useParams()
+    
+    console.log(catId)
+
     useEffect(() => {
 
         setLoading(true)
         pedirDatos()
             .then( (resp) => {
-                setProductos(resp)
+               if (!catId) {
+                   setProductos(resp)
+               }
+               else {
+                   setProductos( resp.filter( prod => prod.category === catId) )
+               }
             })
             .catch( (errror) => {
                 console.log(errror)
@@ -21,7 +31,7 @@ export const  ItemListContainer = () => {
             .finally( () => {
                 setLoading(false)
             })
-    }, [])
+    }, [catId])
 
     return (
         <>

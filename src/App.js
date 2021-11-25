@@ -3,6 +3,9 @@ import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-roter-dom';
+import { CartView } from './components/CartView/CartView';
+import { AppRouter } from './router/AppRouter';
 
 function App() {
 
@@ -14,19 +17,18 @@ function App() {
   const titulo = "hola profe"
 
   return (
-    <div classname="mi-app">
+      <BrowserRouter>
+
 
       <NavBar/>
-      <ItemListContainer greeting="hola profe"/>
-      <ItemDetailContainer/>
 
-      <h2>{ titulo }</h2>
-      <hr/>
+      <AppRouter/>
+    
+        {/* <Footer/> */}
 
-      <section style={estilos}>
-        <p>lorem <br/>ipsum</p>
-      </section>
-    </div>
+
+      </BrowserRouter>
+
   );
 
 }
